@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Manage Tickets</title>
+  <script type="module" src="js/tickets.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="p-6 bg-gray-100">
+
+  <h1 class="text-3xl font-bold mb-6">Ticket Management</h1>
+
+  <!-- Select Event -->
+  <label class="font-semibold">Select Event:</label>
+  <select id="eventSelect" class="border p-2 rounded mb-6"></select>
+
+  <!-- Ticket Table -->
+  <div class="bg-white p-4 rounded shadow">
+    <h2 class="text-xl mb-4">Tickets</h2>
+
+    <table class="w-full text-left border">
+      <thead>
+        <tr class="border bg-gray-200">
+          <th class="p-2">Name</th>
+          <th class="p-2">Price</th>
+          <th class="p-2">Stock</th>
+          <th class="p-2">Sold</th>
+          <th class="p-2">SKU</th>
+          <th class="p-2">Status</th>
+          <th class="p-2">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="ticketTable"></tbody>
+    </table>
+
+  </div>
+
+  <!-- Add ticket -->
+  <div class="bg-white p-4 rounded shadow mt-6">
+    <h2 class="text-xl mb-4">Add Ticket</h2>
+
+    <div class="grid grid-cols-2 gap-4">
+      <input id="tName" placeholder="Name" class="border p-2 rounded">
+      <input id="tPrice" placeholder="Price" class="border p-2 rounded">
+      <input id="tStock" placeholder="Stock" class="border p-2 rounded">
+      <input id="tSku" placeholder="SKU" class="border p-2 rounded">
+
+      <select id="tStatus" class="border p-2 rounded">
+        <option value="active">active</option>
+        <option value="inactive">inactive</option>
+      </select>
+    </div>
+
+    <button id="btnAdd" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded">
+      Add Ticket
+    </button>
+  </div>
+
+</body>
+</html>

@@ -1,19 +1,21 @@
-import { apiGet, apiPost } from "../../js/api.js";
+import { apiGet } from "../../js/api.js";
 
 async function loadProfile() {
   try {
     const data = await apiGet("/admin/profile.php");
-    document.getElementById("adminName").textContent = data.name;
-    localStorage.setItem("adminRole", data.role);
+
+    // amanin biar gak error meski data kosong
+    document.getElementById("adminName").textContent = data?.name || "Admin";
   } catch (err) {
+    console.warn("Auth error:", err.message);
+    localStorage.clear();
     window.location.href = "login.html";
   }
 }
 
 loadProfile();
 
-document.getElementById("logoutBtn").addEventListener("click", async () => {
-  await apiPost("/admin/logout.php", {});
+document.getElementById("logoutBtn").addEventListener("click", () => {
   localStorage.clear();
   window.location.href = "login.html";
 });
