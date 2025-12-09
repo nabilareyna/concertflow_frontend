@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Orders</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orders | ConcertFlow Admin</title>
+  <!-- Ganti CDN Tailwind dengan local CSS file -->
+  <link href="../styles/output.css" rel="stylesheet">
 </head>
 
 <body class="bg-gray-100 p-6">
 
-  <div class="max-w-5xl mx-auto bg-white shadow p-6 rounded-lg">
+  <div class="max-w-5xl mx-auto bg-white shadow rounded-lg p-6">
     <h2 class="text-2xl font-semibold mb-4">Order Management</h2>
 
-    <div class="mb-4 flex justify-between">
+    <div class="mb-6 flex justify-between">
       <input id="search" type="text"
         placeholder="Search by customer name or order code..."
-        class="w-72 p-2 border rounded">
+        class="w-72 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
     </div>
 
-    <table class="w-full border-collapse">
-      <thead>
-        <tr class="bg-gray-200 text-left">
-          <th class="p-2 border">Order ID</th>
-          <th class="p-2 border">Customer</th>
-          <th class="p-2 border">Event</th>
-          <th class="p-2 border">Total</th>
-          <th class="p-2 border">Status</th>
-          <th class="p-2 border">Action</th>
-        </tr>
-      </thead>
-      <tbody id="ordersTable"></tbody>
-    </table>
+    <div class="overflow-x-auto">
+      <table class="w-full text-left text-sm">
+        <thead>
+          <tr class="bg-gray-100 border-b">
+            <th class="p-4 font-semibold text-gray-700">Order ID</th>
+            <th class="p-4 font-semibold text-gray-700">Customer</th>
+            <th class="p-4 font-semibold text-gray-700">Event</th>
+            <th class="p-4 font-semibold text-gray-700">Total</th>
+            <th class="p-4 font-semibold text-gray-700">Status</th>
+            <th class="p-4 font-semibold text-gray-700">Action</th>
+          </tr>
+        </thead>
+        <tbody id="ordersTable" class="divide-y"></tbody>
+      </table>
+    </div>
   </div>
 
   <script type="module" src="./js/orders.js"></script>

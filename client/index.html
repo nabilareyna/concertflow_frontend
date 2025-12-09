@@ -1,16 +1,108 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>ConcertFlow</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 p-6">
-  <h1 class="text-3xl font-bold mb-6 text-indigo-700">🎶 ConcertFlow — Event List</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ConcertFlow - Event Booking Platform</title>
+    <link href="./styles/output.css" rel="stylesheet" />
+  </head>
 
-  <div id="events" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  <body class="bg-gray-50 text-gray-900">
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white border-b border-gray-100">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-lg"></div>
+          <h1 class="text-xl font-semibold text-gray-900">ConcertFlow</h1>
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="#" class="text-sm text-gray-600 hover:text-gray-900 transition">Browse</a>
+          <a href="#" class="text-sm text-gray-600 hover:text-gray-900 transition">About</a>
+          <a href="#" class="text-sm text-gray-600 hover:text-gray-900 transition">Contact</a>
+          <button class="px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition">
+            Sign In
+          </button>
+        </nav>
+      </div>
+    </header>
 
-  <script type="module" src="./js/api.js"></script>
-  <script type="module" src="./js/events.js"></script>
-</body>
+    <!-- Hero Section -->
+    <section class="min-h-[60vh] flex flex-col items-center justify-center px-6 py-24 bg-gradient-to-b from-gray-50 to-white">
+      <div class="max-w-3xl text-center space-y-8">
+        <div class="space-y-4">
+          <p class="text-sm font-medium text-purple-600">Join thousands of music lovers</p>
+          <h2 class="text-5xl md:text-6xl font-bold text-gray-900">
+            Discover and book your next
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600"> concert experience</span>
+          </h2>
+        </div>
+        <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+          Browse through the most exciting concerts and events in your area. 
+          Simple, clean, and built for music enthusiasts.
+        </p>
+        <a href="#events" class="inline-block px-8 py-4 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl">
+          Explore Events
+        </a>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 px-6 bg-white border-y border-gray-100">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <!-- Add stat cards with colored backgrounds inspired by FlowReach -->
+          <div class="p-8 bg-gradient-to-br from-pink-50 to-pink-100 rounded-xl shadow-sm hover:shadow-md transition">
+            <p class="text-3xl font-bold text-pink-600">1,250+</p>
+            <p class="text-sm text-gray-600 mt-2">Events Listed</p>
+          </div>
+          <div class="p-8 bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-xl shadow-sm hover:shadow-md transition">
+            <p class="text-3xl font-bold text-yellow-600">45K+</p>
+            <p class="text-sm text-gray-600 mt-2">Tickets Sold</p>
+          </div>
+          <div class="p-8 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl shadow-sm hover:shadow-md transition">
+            <p class="text-3xl font-bold text-blue-600">98%</p>
+            <p class="text-sm text-gray-600 mt-2">Customer Satisfaction</p>
+          </div>
+          <div class="p-8 bg-gradient-to-br from-purple-50 to-indigo-100 rounded-xl shadow-sm hover:shadow-md transition">
+            <p class="text-3xl font-bold text-purple-600">24/7</p>
+            <p class="text-sm text-gray-600 mt-2">Support Available</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-24 px-6 bg-gray-50">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-16">
+          <h3 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Available Events</h3>
+          <p class="text-lg text-gray-600">Discover upcoming concerts and performances</p>
+        </div>
+
+        <!-- Updated grid layout with search functionality -->
+        <div class="mb-8 flex flex-col md:flex-row gap-4">
+          <input 
+            type="text" 
+            id="searchInput" 
+            placeholder="Search events by name, artist, or venue..." 
+            class="flex-1 px-6 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"
+          />
+        </div>
+
+        <!-- Events Grid -->
+        <div id="eventsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 bg-white border-t border-gray-100">
+      <div class="max-w-7xl mx-auto text-center">
+        <p class="text-sm text-gray-600">Built with care by ConcertFlow. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/api.js"></script>
+    <script type="module" src="./js/events.js"></script>
+    <script type="module" src="./js/index.js"></script>
+  </body>
 </html>

@@ -1,4 +1,4 @@
-export const API_BASE = "http://192.168.56.2/concertflow/server/api";
+export const API_BASE = "http://192.168.56.2/concertflow/server/api/";
 
 function getToken() {
   return localStorage.getItem("token");

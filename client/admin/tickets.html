@@ -1,60 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Manage Tickets</title>
-  <script type="module" src="js/tickets.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Tickets | ConcertFlow Admin</title>
+  <!-- Ganti CDN Tailwind dengan local CSS file -->
+  <link href="../styles/output.css" rel="stylesheet">
 </head>
 
-<body class="p-6 bg-gray-100">
+<body class="bg-gray-100 p-6">
 
   <h1 class="text-3xl font-bold mb-6">Ticket Management</h1>
 
   <!-- Select Event -->
-  <label class="font-semibold">Select Event:</label>
-  <select id="eventSelect" class="border p-2 rounded mb-6"></select>
+  <label class="font-semibold text-gray-700">Select Event:</label>
+  <select id="eventSelect" class="border border-gray-300 p-2 rounded mb-6 focus:outline-none focus:ring-2 focus:ring-blue-500"></select>
 
   <!-- Ticket Table -->
-  <div class="bg-white p-4 rounded shadow">
-    <h2 class="text-xl mb-4">Tickets</h2>
+  <div class="bg-white p-6 rounded-lg shadow">
+    <h2 class="text-xl font-bold mb-4">Tickets</h2>
 
-    <table class="w-full text-left border">
-      <thead>
-        <tr class="border bg-gray-200">
-          <th class="p-2">Name</th>
-          <th class="p-2">Price</th>
-          <th class="p-2">Stock</th>
-          <th class="p-2">Sold</th>
-          <th class="p-2">SKU</th>
-          <th class="p-2">Status</th>
-          <th class="p-2">Actions</th>
-        </tr>
-      </thead>
-      <tbody id="ticketTable"></tbody>
-    </table>
+    <div class="overflow-x-auto">
+      <table class="w-full text-left text-sm border-collapse">
+        <thead>
+          <tr class="border-b bg-gray-50">
+            <th class="p-4 font-semibold text-gray-700">Name</th>
+            <th class="p-4 font-semibold text-gray-700">Price</th>
+            <th class="p-4 font-semibold text-gray-700">Stock</th>
+            <th class="p-4 font-semibold text-gray-700">Sold</th>
+            <th class="p-4 font-semibold text-gray-700">SKU</th>
+            <th class="p-4 font-semibold text-gray-700">Status</th>
+            <th class="p-4 font-semibold text-gray-700">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="ticketTable" class="divide-y"></tbody>
+      </table>
+    </div>
 
   </div>
 
   <!-- Add ticket -->
-  <div class="bg-white p-4 rounded shadow mt-6">
-    <h2 class="text-xl mb-4">Add Ticket</h2>
+  <div class="bg-white p-6 rounded-lg shadow mt-6">
+    <h2 class="text-xl font-bold mb-4">Add Ticket</h2>
 
-    <div class="grid grid-cols-2 gap-4">
-      <input id="tName" placeholder="Name" class="border p-2 rounded">
-      <input id="tPrice" placeholder="Price" class="border p-2 rounded">
-      <input id="tStock" placeholder="Stock" class="border p-2 rounded">
-      <input id="tSku" placeholder="SKU" class="border p-2 rounded">
+    <div class="grid grid-cols-2 gap-4 mb-4">
+      <input id="tName" placeholder="Name" class="border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <input id="tPrice" placeholder="Price" class="border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <input id="tStock" placeholder="Stock" class="border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <input id="tSku" placeholder="SKU" class="border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
 
-      <select id="tStatus" class="border p-2 rounded">
+      <select id="tStatus" class="border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
         <option value="active">active</option>
         <option value="inactive">inactive</option>
       </select>
     </div>
 
-    <button id="btnAdd" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded">
+    <button id="btnAdd" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition font-medium">
       Add Ticket
     </button>
   </div>
 
+  <script type="module" src="./js/tickets.js"></script>
 </body>
 </html>

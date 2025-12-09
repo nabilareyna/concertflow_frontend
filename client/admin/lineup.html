@@ -1,55 +1,69 @@
-<section class="p-6 space-y-6">
-  <h2 class="text-2xl font-bold">Lineup Management</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lineup Management | ConcertFlow Admin</title>
+  <!-- Ganti CDN Tailwind dengan local CSS file -->
+  <link href="../styles/output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+  <section class="p-6 space-y-6">
+    <h2 class="text-2xl font-bold">Lineup Management</h2>
 
-  <!-- Select Event -->
-  <div>
-    <label class="block text-sm font-semibold mb-1">Select Event</label>
-    <select id="eventSelect" class="border p-2 w-full rounded"></select>
-  </div>
-
-  <!-- Form Assign Artist -->
-  <form id="assignForm" class="bg-white shadow rounded p-4 space-y-4">
+    <!-- Select Event -->
     <div>
-      <label class="block text-sm font-semibold">Artist</label>
-      <select id="artistSelect" class="border p-2 w-full rounded"></select>
+      <label class="block text-sm font-semibold text-gray-700 mb-2">Select Event</label>
+      <select id="eventSelect" class="border border-gray-300 p-3 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></select>
     </div>
 
-    <div class="grid grid-cols-3 gap-4">
+    <!-- Form Assign Artist -->
+    <form id="assignForm" class="bg-white shadow rounded-lg p-6 space-y-4">
       <div>
-        <label class="block text-sm font-semibold">Performance Time</label>
-        <input id="performance_time" type="time" class="border p-2 w-full rounded" />
+        <label class="block text-sm font-semibold text-gray-700 mb-1">Artist</label>
+        <select id="artistSelect" class="border border-gray-300 p-3 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></select>
       </div>
 
-      <div>
-        <label class="block text-sm font-semibold">Stage</label>
-        <input id="stage" class="border p-2 w-full rounded" />
+      <div class="grid grid-cols-3 gap-4">
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-1">Performance Time</label>
+          <input id="performance_time" type="time" class="border border-gray-300 p-3 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-1">Stage</label>
+          <input id="stage" class="border border-gray-300 p-3 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-1">Lineup Order</label>
+          <input id="lineup_order" type="number" value="0" class="border border-gray-300 p-3 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
       </div>
 
-      <div>
-        <label class="block text-sm font-semibold">Lineup Order</label>
-        <input id="lineup_order" type="number" value="0" class="border p-2 w-full rounded" />
-      </div>
+      <button class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition font-medium">
+        Assign Artist
+      </button>
+    </form>
+
+    <!-- Table -->
+    <div class="bg-white rounded-lg shadow overflow-hidden">
+      <table class="w-full text-left text-sm">
+        <thead class="bg-gray-100 border-b">
+          <tr>
+            <th class="p-4 font-semibold text-gray-700">#</th>
+            <th class="p-4 font-semibold text-gray-700">Artist</th>
+            <th class="p-4 font-semibold text-gray-700">Stage</th>
+            <th class="p-4 font-semibold text-gray-700">Time</th>
+            <th class="p-4 font-semibold text-gray-700">Order</th>
+            <th class="p-4 font-semibold text-gray-700">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="lineupTable" class="divide-y"></tbody>
+      </table>
     </div>
+  </section>
 
-    <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-      Assign Artist
-    </button>
-  </form>
-
-  <!-- Table -->
-  <table class="w-full bg-white rounded shadow">
-    <thead class="bg-gray-100">
-      <tr>
-        <th class="p-2">#</th>
-        <th class="p-2">Artist</th>
-        <th class="p-2">Stage</th>
-        <th class="p-2">Time</th>
-        <th class="p-2">Order</th>
-        <th class="p-2">Actions</th>
-      </tr>
-    </thead>
-    <tbody id="lineupTable"></tbody>
-  </table>
-</section>
-
-<script type="module" src="./js/assign_artist.js"></script>
+  <script type="module" src="./js/assign_artist.js"></script>
+</body>
+</html>

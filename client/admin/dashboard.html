@@ -4,30 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ConcertFlow Dashboard</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Ganti CDN Tailwind dengan local CSS file -->
+  <link href="../styles/output.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 flex">
   <!-- Sidebar -->
   <aside class="w-64 bg-indigo-700 text-white min-h-screen p-5">
     <h2 class="text-2xl font-bold mb-6">ConcertFlow</h2>
     <nav class="space-y-3">
-      <a href="event.html" class="block hover:bg-indigo-600 rounded p-2">Events</a>
-      <a href="artists.html" class="block hover:bg-indigo-600 rounded p-2">Artists</a>
-      <a href="lineup.html" class="block hover:bg-indigo-600 rounded p-2">Assign Artist</a>
-      <a href="tickets.html" class="block hover:bg-indigo-600 rounded p-2">Tickets</a>
-      <a href="orders.html" class="block hover:bg-indigo-600 rounded p-2">Orders</a>
+      <a href="event.html" class="block hover:bg-indigo-600 rounded p-3 transition">Events</a>
+      <a href="artists.html" class="block hover:bg-indigo-600 rounded p-3 transition">Artists</a>
+      <a href="lineup.html" class="block hover:bg-indigo-600 rounded p-3 transition">Assign Artist</a>
+      <a href="tickets.html" class="block hover:bg-indigo-600 rounded p-3 transition">Tickets</a>
+      <a href="orders.html" class="block hover:bg-indigo-600 rounded p-3 transition">Orders</a>
     </nav>
-    <button id="logoutBtn" class="mt-6 bg-red-500 w-full p-2 rounded hover:bg-red-600">
+    <button id="logoutBtn" class="mt-6 bg-red-500 w-full p-3 rounded hover:bg-red-600 transition font-medium">
       Logout
     </button>
-
   </aside>
 
   <!-- Main content -->
   <main class="flex-1 p-6">
     <h1 class="text-2xl font-bold text-gray-800 mb-4">Welcome, <span id="adminName"></span></h1>
-    <div id="content" class="bg-white rounded shadow p-5">
-      <p>Dashboard ready. Choose a menu to start.</p>
+    <div id="content" class="bg-white rounded-lg shadow p-6">
+      <p class="text-gray-700">Dashboard ready. Choose a menu to start.</p>
     </div>
   </main>
 
